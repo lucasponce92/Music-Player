@@ -15,6 +15,8 @@
 		A0B0008B2687E50E007ABD21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0B000892687E50E007ABD21 /* LaunchScreen.storyboard */; };
 		A0B000962687E50F007ABD21 /* Music_PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B000952687E50F007ABD21 /* Music_PlayerTests.swift */; };
 		A0B000A12687E50F007ABD21 /* Music_PlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B000A02687E50F007ABD21 /* Music_PlayerUITests.swift */; };
+		A0B000B42687E5B3007ABD21 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B000B32687E5B3007ABD21 /* Player.swift */; };
+		A0B000BC2687E6D8007ABD21 /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B000BB2687E6D8007ABD21 /* PlayerVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		A0B0009C2687E50F007ABD21 /* Music PlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Music PlayerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B000A02687E50F007ABD21 /* Music_PlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music_PlayerUITests.swift; sourceTree = "<group>"; };
 		A0B000A22687E50F007ABD21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0B000B32687E5B3007ABD21 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		A0B000BB2687E6D8007ABD21 /* PlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +103,12 @@
 		A0B0007D2687E50B007ABD21 /* Music Player */ = {
 			isa = PBXGroup;
 			children = (
-				A0B0007E2687E50B007ABD21 /* AppDelegate.swift */,
-				A0B000802687E50B007ABD21 /* SceneDelegate.swift */,
-				A0B000822687E50B007ABD21 /* ViewController.swift */,
-				A0B000842687E50B007ABD21 /* Main.storyboard */,
-				A0B000872687E50E007ABD21 /* Assets.xcassets */,
-				A0B000892687E50E007ABD21 /* LaunchScreen.storyboard */,
 				A0B0008C2687E50E007ABD21 /* Info.plist */,
+				A0B000B22687E585007ABD21 /* view */,
+				A0B000B12687E556007ABD21 /* supporting files */,
+				A0B000822687E50B007ABD21 /* ViewController.swift */,
+				A0B000BB2687E6D8007ABD21 /* PlayerVC.swift */,
+				A0B000B32687E5B3007ABD21 /* Player.swift */,
 			);
 			path = "Music Player";
 			sourceTree = "<group>";
@@ -126,6 +129,25 @@
 				A0B000A22687E50F007ABD21 /* Info.plist */,
 			);
 			path = "Music PlayerUITests";
+			sourceTree = "<group>";
+		};
+		A0B000B12687E556007ABD21 /* supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				A0B0007E2687E50B007ABD21 /* AppDelegate.swift */,
+				A0B000802687E50B007ABD21 /* SceneDelegate.swift */,
+			);
+			path = "supporting files";
+			sourceTree = "<group>";
+		};
+		A0B000B22687E585007ABD21 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A0B000842687E50B007ABD21 /* Main.storyboard */,
+				A0B000872687E50E007ABD21 /* Assets.xcassets */,
+				A0B000892687E50E007ABD21 /* LaunchScreen.storyboard */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +281,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0B000832687E50B007ABD21 /* ViewController.swift in Sources */,
+				A0B000B42687E5B3007ABD21 /* Player.swift in Sources */,
 				A0B0007F2687E50B007ABD21 /* AppDelegate.swift in Sources */,
 				A0B000812687E50B007ABD21 /* SceneDelegate.swift in Sources */,
+				A0B000BC2687E6D8007ABD21 /* PlayerVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
