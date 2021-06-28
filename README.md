@@ -121,3 +121,9 @@ override var preferredStatusBarStyle: UIStatusBarStyle {
           return .lightContent
     }
 ```
+
+# Final thoughts
+
+Even tho this code will allow you to develop an audio player, there are better ways to achieve this target, SwiftUI and its binding variables allow you to keep track of what's happening with the audio file, at the same time you update the view, and I will be covering it in a future project (very soon)
+
+Download the complete project to see it working
