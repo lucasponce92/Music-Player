@@ -12,6 +12,7 @@ We will be covering:
 * Light content in status bar (Bonus)
 
 <a name="background"/>
+
 ## Music playing in background
 
 Implement de following code on your AppDelegate file, this will allow the music or audio files to keep playing when the app is on background
