@@ -9,10 +9,11 @@ We will be covering:
 * Custom AVPlayer
 * Music playing from URL
 * Updating UISlider position while music is playing
-* Light content in status bar
+* Light content in status bar (Bonus)
 
 # Music playing in background
 
+Implement de following code on your AppDelegate file, this will allow the music or audio files to keep playing when the app is on background
 ```swift
 //AppDelegate
 
@@ -77,4 +78,46 @@ class Player: AVPlayer{
         }
     }
 }
+```
+
+# Music playing from URL
+
+You can initialize the player with AVPlayer(url:"yoururl"), it will fetch your audio file, playlist, or anything automatically. In this case we use our custom class and fetch a random .mp3 I found online, replace it with your own .mp3 audio file
+```swift
+class PlayerVC: UIViewController {
+    
+    var dragging = false
+    var player: Player?
+    @IBOutlet weak var playButton: PlayerMainButton!
+    @IBOutlet weak var slider: UISlider!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.player = Player(url: URL(string: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3")!)
+        self.player!.playCap(button: playButton)
+  }
+}
+```
+You can see we're passing a button to the playCap func. We do this to keep track of our main player button and be able to asign different icons and functionalities according to the player mode (.playing or .pause)
+
+# Updating UISlider position while music is playing
+
+```swift
+self.player?.addPeriodicTimeObserver(forInterval: CMTime.init(value: 1, timescale: 1), queue: .main, using: { time in
+            
+            if !self.dragging{
+                let progress : Float64 = CMTimeGetSeconds(time)
+                self.slider.setValue(Float(progress), animated: true)
+            }
+        })
+```
+
+# Light content in status bar
+
+Use this code in your first ViewController to override the status bar preferences
+```swift
+override var preferredStatusBarStyle: UIStatusBarStyle {
+          return .lightContent
+    }
 ```
