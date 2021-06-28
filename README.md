@@ -6,8 +6,8 @@ I hope someone can find it usefull.
 
 We will be covering:
 * Music playing in background
+* Custom AVPlayer
 * Music playing from URL
-* Custim AVPlayer
 * Updating UISlider position while music is playing
 * Light content in status bar
 
@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 ```
 
-# Music playing from URL
+# Custom AVPlayer
 
 ```swift
 //Custom AVPlayer
