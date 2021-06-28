@@ -7,7 +7,9 @@ I hope someone can find it usefull.
 We will be covering:
 * Music playing in background
 * Music playing from URL
+* Custim AVPlayer
 * Updating UISlider position while music is playing
+* Light content in status bar
 
 # Music playing in background
 
@@ -15,10 +17,64 @@ We will be covering:
 //AppDelegate
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
-  ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions) 
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.soloAmbient)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+        } catch {
+            
+        }
+        
+        return true
+    }
 }
+```
 
-func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-  return ApplicationDelegate.shared.application(app, open: url, options: options)
+# Music playing from URL
+
+```swift
+//Custom AVPlayer
+
+import Foundation
+import MediaPlayer
+
+class Player: AVPlayer{
+    
+    var timer = Timer()
+    var buttonStreaming: UIButton?
+    
+    var playButton: PlayerMainButton?
+
+    func playCap(button: PlayerMainButton){
+        
+        if button.iconStatus == button.PLAY{
+
+            button.setImage(UIImage(named: "rounded_pause"), for: .normal)
+            button.iconStatus = button.PAUSE
+            
+            self.play()
+            playButton = button
+            self.currentItem?.addObserver(self, forKeyPath: "status", options: [.old, .new], context: nil)
+            
+        }else if button.iconStatus == button.PAUSE{
+            button.setImage(UIImage(named: "rounded_play"), for: .normal)
+            button.iconStatus = button.PLAY
+            self.pause()
+        }
+    }
+    
+    func pauseCap(button: PlayerMainButton){
+        self.pause()
+        button.setImage(UIImage(named: "rounded_play"), for: .normal)
+        button.iconStatus = button.PLAY
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+
+        if self.currentItem?.status == AVPlayerItem.Status.readyToPlay{
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        }
+    }
 }
 ```
