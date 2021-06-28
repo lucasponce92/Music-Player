@@ -10,3 +10,15 @@ We will be covering:
 * Updating UISlider position while music is playing
 
 # Music playing in background
+
+```swift
+//AppDelegate
+
+class AppDelegate: UIResponder, UIApplicationDelegate {
+  ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions) 
+}
+
+func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+  return ApplicationDelegate.shared.application(app, open: url, options: options)
+}
+```
