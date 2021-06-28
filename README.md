@@ -5,12 +5,13 @@ At the time I was recomended to use AVPlayer for this porpuses instead of AVAudi
 I hope someone can find it usefull.
 
 We will be covering:
-* Music playing in background
+* [Music playing in background](#background)
 * Custom AVPlayer
 * Music playing from URL
 * Updating UISlider position while music is playing
 * Light content in status bar (Bonus)
 
+<a name="background"/>
 ## Music playing in background
 
 Implement de following code on your AppDelegate file, this will allow the music or audio files to keep playing when the app is on background
