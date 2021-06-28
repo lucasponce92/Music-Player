@@ -4,6 +4,7 @@ Hi everyone, today I'm sharing with you a piece of code from a project I was ask
 At the time I was recomended to use AVPlayer for this porpuses instead of AVAudioPlayer because the implementation is easier when you're trying to achieve for it to keep playing when the app is in background.
 I hope someone can find it usefull.
 
+
 We will be covering:
 * [Music playing in background](#background)
 * [Custom AVPlayer](#custom)
