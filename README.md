@@ -6,10 +6,11 @@ I hope someone can find it usefull.
 
 We will be covering:
 * [Music playing in background](#background)
-* Custom AVPlayer
-* Music playing from URL
-* Updating UISlider position while music is playing
-* Light content in status bar (Bonus)
+* [Custom AVPlayer](#custom)
+* [Music playing from URL](#url)
+* [Updating UISlider position while music is playing](#slider)
+* [Light content in status bar (Bonus)](#statusbar)
+* [Final thoughts](#final)
 
 <a name="background"/>
 
@@ -33,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 ```
+<a name="custom"/>
 
 ## Custom AVPlayer
 
@@ -81,6 +83,7 @@ class Player: AVPlayer{
     }
 }
 ```
+<a name="url"/>
 
 ## Music playing from URL
 
@@ -103,6 +106,8 @@ class PlayerVC: UIViewController {
 ```
 You can see we're passing a button to the playCap func. We do this to keep track of our main player button and be able to asign different icons and functionalities according to the player mode (.playing or .pause)
 
+<a name="slider"/>
+
 ## Updating UISlider position while music is playing
 
 ```swift
@@ -115,6 +120,8 @@ self.player?.addPeriodicTimeObserver(forInterval: CMTime.init(value: 1, timescal
         })
 ```
 
+<a name="statusbar"/>
+
 ## Light content in status bar
 
 Use this code in your first ViewController to override the status bar preferences
@@ -123,6 +130,8 @@ override var preferredStatusBarStyle: UIStatusBarStyle {
           return .lightContent
     }
 ```
+
+<a name="final"/>
 
 ## Final thoughts
 
