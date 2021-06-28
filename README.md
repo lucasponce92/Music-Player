@@ -1,4 +1,4 @@
-# Music Player Swift and UIKit Project
+## Music Player Swift and UIKit Project
 
 Hi everyone, today I'm sharing with you a piece of code from a project I was asked to collaborate in a few years ago, it's about a music player with the looks of spotify.
 At the time I was recomended to use AVPlayer for this porpuses instead of AVAudioPlayer because the implementation is easier when you're trying to achieve for it to keep playing when the app is in background.
@@ -11,7 +11,7 @@ We will be covering:
 * Updating UISlider position while music is playing
 * Light content in status bar (Bonus)
 
-# Music playing in background
+## Music playing in background
 
 Implement de following code on your AppDelegate file, this will allow the music or audio files to keep playing when the app is on background
 ```swift
@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 ```
 
-# Custom AVPlayer
+## Custom AVPlayer
 
 ```swift
 //Custom AVPlayer
@@ -80,7 +80,7 @@ class Player: AVPlayer{
 }
 ```
 
-# Music playing from URL
+## Music playing from URL
 
 You can initialize the player with AVPlayer(url:"yoururl"), it will fetch your audio file, playlist, or anything automatically. In this case we use our custom class and fetch a random .mp3 I found online, replace it with your own .mp3 audio file
 ```swift
@@ -101,7 +101,7 @@ class PlayerVC: UIViewController {
 ```
 You can see we're passing a button to the playCap func. We do this to keep track of our main player button and be able to asign different icons and functionalities according to the player mode (.playing or .pause)
 
-# Updating UISlider position while music is playing
+## Updating UISlider position while music is playing
 
 ```swift
 self.player?.addPeriodicTimeObserver(forInterval: CMTime.init(value: 1, timescale: 1), queue: .main, using: { time in
@@ -113,7 +113,7 @@ self.player?.addPeriodicTimeObserver(forInterval: CMTime.init(value: 1, timescal
         })
 ```
 
-# Light content in status bar
+## Light content in status bar
 
 Use this code in your first ViewController to override the status bar preferences
 ```swift
@@ -122,7 +122,7 @@ override var preferredStatusBarStyle: UIStatusBarStyle {
     }
 ```
 
-# Final thoughts
+## Final thoughts
 
 Even tho this code will allow you to develop an audio player, there are better ways to achieve this target, SwiftUI and its binding variables allow you to keep track of what's happening with the audio file, at the same time you update the view, and I will be covering it in a future project (very soon)
 
