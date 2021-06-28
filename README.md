@@ -13,7 +13,7 @@ We will be covering:
 * [Light content in status bar (Bonus)](#statusbar)
 * [Final thoughts](#final)
 
-![alt text](https://github.com/lucasponce92/Music-Player/blob/main/docs/screenshot.png | width=100)
+![alt text](https://github.com/lucasponce92/Music-Player/blob/main/docs/screenshot.png)
 
 <a name="background"/>
 
