@@ -13,7 +13,7 @@ We will be covering:
 * [Light content in status bar (Bonus)](#statusbar)
 * [Final thoughts](#final)
 
-<img src="https://github.com/lucasponce92/Music-Player/blob/main/docs/screenshot.png" width="100" height="100">
+<img src="https://github.com/lucasponce92/Music-Player/blob/main/docs/screenshot.png" width="750" height="1320">
 
 <a name="background"/>
 
